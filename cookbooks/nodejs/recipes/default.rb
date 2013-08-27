@@ -14,7 +14,7 @@ bash "build nodejs" do
   code <<-EOF
   tar -zxvf node-v#{version}.tar.gz
   (cd node-v#{version} && python26 ./configure)
-  (cd node-v#{version} && make && make install)
+  (cd node-v#{version} && make -j #{node["cpu"]["total"]} && make install)
   EOF
   not_if "which node"
 end
