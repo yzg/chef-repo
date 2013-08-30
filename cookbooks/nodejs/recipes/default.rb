@@ -1,4 +1,6 @@
 
+include_recipe "yum::epel"
+
 package "python26"
 package "gcc-c++"
 
@@ -18,4 +20,9 @@ bash "build nodejs" do
   EOF
   not_if "which node"
 end
+
+execute "npm install -g supervisor"
+execute "npm install -g express"
+execute "npm install -g mocha"
+
 
