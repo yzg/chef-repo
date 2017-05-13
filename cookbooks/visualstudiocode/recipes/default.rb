@@ -1,0 +1,3 @@
+
+chocolatey_package 'visualstudiocode'
+
