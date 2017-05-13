@@ -23,7 +23,8 @@ when 'ubuntu' then
     components ['stable']
   end
   
-  include_recipe 'apt'
+  #include_recipe 'apt'
+  execute 'apt-get update'
   
   package 'docker-ce'
   
